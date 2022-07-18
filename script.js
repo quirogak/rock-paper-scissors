@@ -41,31 +41,31 @@ function playRound(playerSelection, computerSelection){
 
     
     if (playerSelection == computerSelection){
-        return alert("TIE!")
+        return 3 && "TIE!" ;
     } 
 
-    if(playerSelection == "Rock" && computerSelection == "Paper"){
-        return false && "You lose," +playerSelection+ "beats " + computerSelection+"!"
+    else if(playerSelection == "Rock" && computerSelection == "Paper"){
+        return 1 && "You lose, " +playerSelection+ " beats " + computerSelection+" !" ;
 
     }
-    if(playerSelection == "Paper" && computerSelection == "Scissors"){
-        return false && "You lose, " +playerSelection+ " beats " + computerSelection+" !"
+    else if(playerSelection == "Paper" && computerSelection == "Scissors"){
+        return 1 && "You lose, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
-    if(playerSelection == "Scissors" && computerSelection == "Rock"){
-        return false && "You lose, " +playerSelection+ " beats " + computerSelection+" !"
+    else if(playerSelection == "Scissors" && computerSelection == "Rock"){
+        return 1 && "You lose, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
-    if(playerSelection == "Paper" && computerSelection == "Rock"){
-        return true && "You won, " +playerSelection+ "beats " + computerSelection+"!"
+    else if(playerSelection == "Paper" && computerSelection == "Rock"){
+        return 2 && "You won, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
-    if(playerSelection == "Scissors" && computerSelection == "Paper"){
-        return true && "You won, " +playerSelection+ "beats " + computerSelection+"!"
+    else if(playerSelection == "Scissors" && computerSelection == "Paper"){
+        return 2 && "You won, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
-    if(playerSelection == "Rock" && computerSelection == "Scissors"){
-        return true && "You won, " +playerSelection+ "beats " + computerSelection+"!"
+    else if(playerSelection == "Rock" && computerSelection == "Scissors"){
+        return 2 && "You won, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
     else return ("invalid")
