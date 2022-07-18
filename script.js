@@ -43,6 +43,31 @@ function playRound(playerSelection, computerSelection){
     if (playerSelection == computerSelection){
         return alert("TIE!")
     } 
+
+    if(playerSelection == "Rock" && computerSelection == "Paper"){
+        return false && "You lose," +playerSelection+ "beats " + computerSelection+"!"
+
+    }
+    if(playerSelection == "Paper" && computerSelection == "Scissors"){
+        return false && "You lose, " +playerSelection+ " beats " + computerSelection+" !"
+
+    }
+    if(playerSelection == "Scissors" && computerSelection == "Rock"){
+        return false && "You lose, " +playerSelection+ " beats " + computerSelection+" !"
+
+    }
+    if(playerSelection == "Paper" && computerSelection == "Rock"){
+        return true && "You won, " +playerSelection+ "beats " + computerSelection+"!"
+
+    }
+    if(playerSelection == "Scissors" && computerSelection == "Paper"){
+        return true && "You won, " +playerSelection+ "beats " + computerSelection+"!"
+
+    }
+    if(playerSelection == "Rock" && computerSelection == "Scissors"){
+        return true && "You won, " +playerSelection+ "beats " + computerSelection+"!"
+
+    }
     else return ("invalid")
     
     } 
