@@ -27,14 +27,23 @@ function getUserChoice(){
    }
 
 
+   const playerSelection = getUserChoice();
+   const computerSelection = getComputerChoice();
    
+   console.log(computerSelection);
+   console.log(playerSelection);
+   console.log(playRound(playerSelection, computerSelection));
 
 
 
 
+function playRound(playerSelection, computerSelection){
 
-
-console.log (getComputerChoice())
-
-console.log (getUserChoice())
+    
+    if (playerSelection == computerSelection){
+        return alert("TIE!")
+    } 
+    else return ("invalid")
+    
+    } 
 
