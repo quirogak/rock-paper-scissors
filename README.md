@@ -28,9 +28,13 @@ Hallar una forma para comparar Piedra, Papel y Tijera.
 Imprimir un resultado x si una vence a otra opción
 Imprimir un resultado y en caso de empate.
 Imprimir un resultado en caso de no escoger ninguna de las 3 opciones.
+para ir contando el resultado, tomaré variables genéricas x, y , z con valor
+1 en caso de empate, 3 en caso de victoria y 0 en caso de derrota.
+Hacer una función que juegue 5 rondas, guarde los resultados y defina
+un ganador o perdedor al final.
+
 
 Hacer que los datos que dígite el usuario no sean Case-Sensitive.
 
 (Plan sujeto a cambios y modificaciones a futuro).
-
 
