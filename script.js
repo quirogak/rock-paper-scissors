@@ -39,8 +39,8 @@ function getUserChoice(){
 
 function playRound(playerSelection, computerSelection){
 
-    const c = 1
-    const a= 0
+    const c = 2
+    const a= 1
     const b = 3
 
 
@@ -49,7 +49,7 @@ function playRound(playerSelection, computerSelection){
     } 
 
     else if(playerSelection == "Rock" && computerSelection == "Paper"){
-        return a && "You lose, " +playerSelection+ " beats " + computerSelection+" !" ;
+        return  "You lose, " +playerSelection+ " beats " + computerSelection+" !" && a ;
 
     }
     else if(playerSelection == "Paper" && computerSelection == "Scissors"){
@@ -75,4 +75,6 @@ function playRound(playerSelection, computerSelection){
     else return ("invalid")
     
     } 
+
+
 
