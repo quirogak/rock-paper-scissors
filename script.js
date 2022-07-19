@@ -26,49 +26,78 @@ function getUserChoice(){
 
    }
 
+        
 
    const playerSelection = getUserChoice();
    const computerSelection = getComputerChoice();
-   
-   console.log(computerSelection);
-   console.log(playerSelection);
-   console.log(playRound(playerSelection, computerSelection));
-
-
+   let userScore=(0)
+   let computerScore=(0)
 
 
 function playRound(playerSelection, computerSelection){
-
+ 
     
+
     if (playerSelection == computerSelection){
         return 3 && "TIE!" ;
     } 
 
     else if(playerSelection == "Rock" && computerSelection == "Paper"){
-        return 1 && "You lose, " +playerSelection+ " beats " + computerSelection+" !" ;
+        return computerScore++ && "You lose this round, " +playerSelection+ " beats " + computerSelection+" !" ;
 
     }
     else if(playerSelection == "Paper" && computerSelection == "Scissors"){
-        return 1 && "You lose, " +playerSelection+ " beats " + computerSelection+" !";
+        return computerScore++ && "You lose this round, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
     else if(playerSelection == "Scissors" && computerSelection == "Rock"){
-        return 1 && "You lose, " +playerSelection+ " beats " + computerSelection+" !";
+        return computerScore++ && "You lose this round, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
     else if(playerSelection == "Paper" && computerSelection == "Rock"){
-        return 2 && "You won, " +playerSelection+ " beats " + computerSelection+" !";
+        return userScore++ && "You won this round, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
     else if(playerSelection == "Scissors" && computerSelection == "Paper"){
-        return 2 && "You won, " +playerSelection+ " beats " + computerSelection+" !";
+        return userScore++ && "You won this round, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
     else if(playerSelection == "Rock" && computerSelection == "Scissors"){
-        return 2 && "You won, " +playerSelection+ " beats " + computerSelection+" !";
+        return userScore++ && "You won this round, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
-    else return ("invalid")
+    else return computerScore++ && ("Invalid input, you lose this round.")
+
+    
     
     } 
 
+       
+
+
+    
+     
+    for (let i = 0; i < 5; i++) {
+        console.log(playRound(playerSelection, computerSelection));
+        console.log(userScore)
+        console.log(computerScore)
+         getUserChoice();
+         getComputerChoice();
+         
+         if (userScore == 5){
+          console.log("You won the game!")
+
+        }
+        if (computerScore == 5){
+            console.log("You lost the game!")
+  
+          }
+
+        
+         }
+    
+        
+        
+    
+     
+    
