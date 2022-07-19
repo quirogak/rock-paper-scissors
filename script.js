@@ -39,42 +39,36 @@ function getUserChoice(){
 
 function playRound(playerSelection, computerSelection){
 
-    const c = 2
-    const a= 1
-    const b = 3
-
-
+    
     if (playerSelection == computerSelection){
-        return c && "TIE!" ;
+        return 3 && "TIE!" ;
     } 
 
     else if(playerSelection == "Rock" && computerSelection == "Paper"){
-        return  "You lose, " +playerSelection+ " beats " + computerSelection+" !" && a ;
+        return 1 && "You lose, " +playerSelection+ " beats " + computerSelection+" !" ;
 
     }
     else if(playerSelection == "Paper" && computerSelection == "Scissors"){
-        return a && "You lose, " +playerSelection+ " beats " + computerSelection+" !";
+        return 1 && "You lose, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
     else if(playerSelection == "Scissors" && computerSelection == "Rock"){
-        return a && "You lose, " +playerSelection+ " beats " + computerSelection+" !";
+        return 1 && "You lose, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
     else if(playerSelection == "Paper" && computerSelection == "Rock"){
-        return b && "You won, " +playerSelection+ " beats " + computerSelection+" !";
+        return 2 && "You won, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
     else if(playerSelection == "Scissors" && computerSelection == "Paper"){
-        return b && "You won, " +playerSelection+ " beats " + computerSelection+" !";
+        return 2 && "You won, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
     else if(playerSelection == "Rock" && computerSelection == "Scissors"){
-        return b && "You won, " +playerSelection+ " beats " + computerSelection+" !";
+        return 2 && "You won, " +playerSelection+ " beats " + computerSelection+" !";
 
     }
     else return ("invalid")
     
     } 
-
-
 
