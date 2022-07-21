@@ -68,33 +68,47 @@ function playRound(playerSelection, computerSelection){
 
     function playGame(playRound) {
     
-    for (let i = 0; i <= 4; i++) {
-        console.log(playRound(playerSelection,computerSelection));
+    for (let i = 0; i < 5; i++) {
+
         console.log(userScore);
         console.log(computerScore);
         playerSelection = getUserChoice();
         computerSelection = getComputerChoice();
-         
-         if ((userScore > computerScore && i == 4)){
+        console.log(playRound(playerSelection,computerSelection));
+        
+
+         if ((i == 4 && (userScore > computerScore) )){
+            console.log(userScore);
+            console.log(computerScore);
           console.log("You won the game!")
+          break
 
         }
-        else if ((computerScore > userScore && i == 4)){
+        else if ((i == 4 && (computerScore > userScore) )){
+            console.log(userScore);
+            console.log(computerScore);
             console.log("You lost the game!")
+            break
   
         }
 
-        else if ((userScore == computerScore && i == 4)){
+        else if ((i == 4 && (userScore == computerScore))){
+            console.log(userScore);
+            console.log(computerScore);
         console.log("The game ends up tied!");
+        break
         }
+        
+
+
       }
       
-         return "Game over"
+      return "Game over"
+         
         }
-    
-    let playerSelection = getUserChoice();
-    let computerSelection = getComputerChoice();
-    let userScore=(0);
-    let computerScore=(0);
+
+
+        let userScore = 0;
+        let computerScore = 0;
         
-    console.log(playGame(playRound));
+        console.log(playGame(playRound))
