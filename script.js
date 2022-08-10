@@ -1,3 +1,9 @@
+const rockButton = document.querySelector("#rock")
+const paperButton = document.querySelector("#paper")
+const scissorsButton = document.querySelector("#scissors")
+
+
+
 function getComputerChoice(){
     const options =["Rock", "Paper","Scissors"]
 
@@ -7,10 +13,11 @@ function getComputerChoice(){
    
 }
 
+
+/*
 function getUserChoice(){
 
-   
-   let userChoice = prompt("Please select an option between Paper, Rock and Scissors");
+    let userChoice = prompt("enter a pepe")
 
    let firstLetter = userChoice.charAt(0).toUpperCase();
 
@@ -26,7 +33,7 @@ function getUserChoice(){
 }
 
    }
-
+*/
 
 function playRound(playerSelection, computerSelection){
 
@@ -64,7 +71,33 @@ function playRound(playerSelection, computerSelection){
     }
    
 }
+let userScore = 0;
+let computerScore = 0;
 
+
+ rockButton.addEventListener('click',(playerSelection) => {
+ playerSelection = "Rock"  
+ console.log(playRound(playerSelection,computerSelection))
+    
+});
+
+paperButton.addEventListener('click',(playerSelection) => {
+    playerSelection = "Paper"  
+    console.log(playRound(playerSelection,computerSelection))
+       
+   });
+
+scissorsButton.addEventListener('click',(playerSelection) => {
+    playerSelection = "Scissors"  
+    console.log(playRound(playerSelection,computerSelection))
+       
+   });
+
+computerSelection = getComputerChoice();
+console.log(computerSelection)
+
+
+/*
 
     function playGame(playRound) {
     
@@ -108,7 +141,8 @@ function playRound(playerSelection, computerSelection){
         }
 
 
-        let userScore = 0;
-        let computerScore = 0;
         
+
         console.log(playGame(playRound))
+
+        */
