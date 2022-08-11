@@ -17,7 +17,7 @@ function getComputerChoice(){
 /*
 function getUserChoice(){
 
-    let userChoice = prompt("enter a pepe")
+    let userChoice = prompt("write an option between rock paper and scissors")
 
    let firstLetter = userChoice.charAt(0).toUpperCase();
 
