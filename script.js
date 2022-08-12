@@ -1,23 +1,31 @@
 const rockButton = document.querySelector("#rock")
 const paperButton = document.querySelector("#paper")
 const scissorsButton = document.querySelector("#scissors")
+const currentRoundScore = document.querySelector("#roundScore")
+const currentUserScore = document.querySelector("#userScore")
+const currentComputerScore = document.querySelector("#computerScore")
+const finalResult = document.querySelector("#finalResult")
+
+
+
 
 
 
 function getComputerChoice(){
+
     const options =["Rock", "Paper","Scissors"]
 
     const random = options[Math.floor(Math.random() * options.length)];
     
     return random;
-   
-}
+    }
+
 
 
 /*
 function getUserChoice(){
 
-    let userChoice = prompt("enter a pepe")
+    let userChoice = prompt("enter a ")
 
    let firstLetter = userChoice.charAt(0).toUpperCase();
 
@@ -71,48 +79,100 @@ function playRound(playerSelection, computerSelection){
     }
    
 }
+
+
+
+
+const chooseRock = function(){
+
+    playerSelection = "Rock"
+    computerSelection = getComputerChoice()
+    console.log(userScore)
+    console.log(computerScore)
+    console.log(playRound(playerSelection,computerSelection))
+
+
+currentUserScore.textContent = "User score : " + userScore; 
+currentComputerScore.textContent = "Computer score : " + computerScore;
+    
+    
+    if (userScore + computerScore == 5 )   {
+    console.log(playGame(playRound))
+
+    rockButton.disabled = true
+    paperButton.disabled = true
+    scissorsButton.disabled = true
+
+    }
+}
+
+const choosePaper = function(){
+
+    playerSelection = "Paper"
+    computerSelection = getComputerChoice()
+    console.log(userScore)
+    console.log(computerScore)
+    console.log(playRound(playerSelection,computerSelection))
+    
+currentUserScore.textContent = "User score : " + userScore; 
+currentComputerScore.textContent = "Computer score : " + computerScore;
+    
+    if (userScore + computerScore == 5 )   {
+      console.log(playGame(playRound))
+    rockButton.disabled = true
+    paperButton.disabled = true
+    scissorsButton.disabled = true
+
+        }
+    }
+
+
+const chooseScissors = function(){
+    
+    playerSelection = "Scissors"
+    computerSelection = getComputerChoice()
+    console.log(userScore)
+    console.log(computerScore)
+    console.log(playRound(playerSelection,computerSelection))
+    
+currentUserScore.textContent = "User score : " + userScore; 
+currentComputerScore.textContent = "Computer score : " + computerScore;
+    
+    if (userScore + computerScore == 5 )   {
+
+    rockButton.disabled = true
+    paperButton.disabled = true
+    scissorsButton.disabled = true
+        
+        console.log(playGame(playRound))
+    
+        }
+}
+
+
+rockButton.addEventListener('click',(chooseRock)) 
+
+       
+paperButton.addEventListener('click',(choosePaper)) 
+           
+       
+scissorsButton.addEventListener('click',(chooseScissors)) 
+
+
+
 let userScore = 0;
 let computerScore = 0;
 
 
- rockButton.addEventListener('click',(playerSelection) => {
- playerSelection = "Rock"  
- console.log(playRound(playerSelection,computerSelection))
-    
-});
-
-paperButton.addEventListener('click',(playerSelection) => {
-    playerSelection = "Paper"  
-    console.log(playRound(playerSelection,computerSelection))
-       
-   });
-
-scissorsButton.addEventListener('click',(playerSelection) => {
-    playerSelection = "Scissors"  
-    console.log(playRound(playerSelection,computerSelection))
-       
-   });
-
-computerSelection = getComputerChoice();
-console.log(computerSelection)
-
-
-/*
-
-    function playGame(playRound) {
+function playGame() {
     
     for (let i = 0; i < 5; i++) {
 
-        console.log(userScore);
-        console.log(computerScore);
-        playerSelection = getUserChoice();
-        computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection,computerSelection));
-        
 
          if ((i == 4 && (userScore > computerScore) )){
             console.log(userScore);
             console.log(computerScore);
+    finalResult.textContent = "You won the game!";
           console.log("You won the game!")
           break
 
@@ -120,6 +180,7 @@ console.log(computerSelection)
         else if ((i == 4 && (computerScore > userScore) )){
             console.log(userScore);
             console.log(computerScore);
+            finalResult.textContent = "You lost the game!";
             console.log("You lost the game!")
             break
   
@@ -128,6 +189,7 @@ console.log(computerSelection)
         else if ((i == 4 && (userScore == computerScore))){
             console.log(userScore);
             console.log(computerScore);
+            finalResult.textContent = "The game ends up tied!";
         console.log("The game ends up tied!");
         break
         }
@@ -137,12 +199,10 @@ console.log(computerSelection)
       }
       
       return "Game over"
+      
          
         }
 
+    
 
-        
-
-        console.log(playGame(playRound))
-
-        */
+    
