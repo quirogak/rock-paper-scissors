@@ -25,7 +25,11 @@ function getComputerChoice(){
 /*
 function getUserChoice(){
 
+<<<<<<< HEAD
     let userChoice = prompt("enter a ")
+=======
+    let userChoice = prompt("write an option between rock paper and scissors")
+>>>>>>> refs/remotes/origin/rps-ui
 
    let firstLetter = userChoice.charAt(0).toUpperCase();
 
@@ -205,4 +209,12 @@ function playGame() {
 
     
 
+<<<<<<< HEAD
     
+=======
+        
+
+        console.log(playGame(playRound))
+
+        */
+>>>>>>> refs/remotes/origin/rps-ui
