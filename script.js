@@ -81,7 +81,7 @@ const chooseRock = function(){
 
     playerSelection = "Rock"
     computerSelection = getComputerChoice()
-    console.log(playRound(playerSelection,computerSelection))
+    currentRoundScore.textContent = playRound(playerSelection,computerSelection)
     console.log(userScore)
     console.log(computerScore)
 
@@ -106,11 +106,11 @@ const choosePaper = function(){
 
     playerSelection = "Paper"
     computerSelection = getComputerChoice()
-    console.log(playRound(playerSelection,computerSelection))
+    currentRoundScore.textContent = playRound(playerSelection,computerSelection)
     console.log(userScore)
     console.log(computerScore)
     
-    
+
 currentUserScore.textContent = "User score : " + userScore; 
 currentComputerScore.textContent = "Computer score : " + computerScore;
 
@@ -129,10 +129,9 @@ const chooseScissors = function(){
     
     playerSelection = "Scissors"
     computerSelection = getComputerChoice()
-    console.log(playRound(playerSelection,computerSelection))
+    currentRoundScore.textContent = playRound(playerSelection,computerSelection)
     console.log(userScore)
     console.log(computerScore)
-    
 currentUserScore.textContent = "User score : " + userScore; 
 currentComputerScore.textContent = "Computer score : " + computerScore;
 console.log(counter)
@@ -219,7 +218,7 @@ function playGame() {
 
       }
       
-      
+      return "Game over!"
          
         }
   
