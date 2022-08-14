@@ -24,28 +24,18 @@ function getComputerChoice(){
 
 /*
 function getUserChoice(){
-
-<<<<<<< HEAD
     let userChoice = prompt("enter a ")
-=======
-    let userChoice = prompt("write an option between rock paper and scissors")
->>>>>>> refs/remotes/origin/rps-ui
-
    let firstLetter = userChoice.charAt(0).toUpperCase();
-
    let restText = userChoice.slice(1).toLowerCase();
-
    let fullText = firstLetter + restText; 
-
    if (fullText != "Rock" && fullText != "Paper" && fullText != "Scissors" ){
     return undefined
-
  } else {
     return fullText;
 }
-
    }
 */
+
 
 function playRound(playerSelection, computerSelection){
 
@@ -84,74 +74,105 @@ function playRound(playerSelection, computerSelection){
    
 }
 
-
+//these functions that are called each time we press a specified button with eventListeners, play 5 full rounds and disable the buttons when the game is over.
 
 
 const chooseRock = function(){
 
     playerSelection = "Rock"
     computerSelection = getComputerChoice()
+    console.log(playRound(playerSelection,computerSelection))
     console.log(userScore)
     console.log(computerScore)
-    console.log(playRound(playerSelection,computerSelection))
 
 
 currentUserScore.textContent = "User score : " + userScore; 
 currentComputerScore.textContent = "Computer score : " + computerScore;
     
     
-    if (userScore + computerScore == 5 )   {
-    console.log(playGame(playRound))
 
+    if (counter == 5) {
+        console.log(playGame(playRound))
     rockButton.disabled = true
     paperButton.disabled = true
     scissorsButton.disabled = true
+    
+        }
 
     }
-}
+
 
 const choosePaper = function(){
 
     playerSelection = "Paper"
     computerSelection = getComputerChoice()
+    console.log(playRound(playerSelection,computerSelection))
     console.log(userScore)
     console.log(computerScore)
-    console.log(playRound(playerSelection,computerSelection))
+    
     
 currentUserScore.textContent = "User score : " + userScore; 
 currentComputerScore.textContent = "Computer score : " + computerScore;
-    
-    if (userScore + computerScore == 5 )   {
-      console.log(playGame(playRound))
-    rockButton.disabled = true
-    paperButton.disabled = true
-    scissorsButton.disabled = true
 
-        }
+if (counter == 5) {
+    console.log(playGame(playRound))
+rockButton.disabled = true
+paperButton.disabled = true
+scissorsButton.disabled = true
+
     }
+    
+}
 
 
 const chooseScissors = function(){
     
     playerSelection = "Scissors"
     computerSelection = getComputerChoice()
+    console.log(playRound(playerSelection,computerSelection))
     console.log(userScore)
     console.log(computerScore)
-    console.log(playRound(playerSelection,computerSelection))
     
 currentUserScore.textContent = "User score : " + userScore; 
 currentComputerScore.textContent = "Computer score : " + computerScore;
-    
-    if (userScore + computerScore == 5 )   {
+console.log(counter)
 
+        
+    if (counter == 5) {
+        console.log(playGame(playRound))
     rockButton.disabled = true
     paperButton.disabled = true
     scissorsButton.disabled = true
-        
-        console.log(playGame(playRound))
     
         }
 }
+
+//count how many times the buttons are clicked in order to play 5 rounds.
+
+let counter = 0;
+
+rockButton.onclick = (function() {
+
+    return function(){
+        counter++;
+    };
+})();
+
+paperButton.onclick = (function() {
+
+    return function(){
+        counter++;
+    };
+})();
+
+scissorsButton.onclick = (function() {
+
+    return function(){
+        counter++;
+    };
+})();
+
+//calling a round with the choice selected
 
 
 rockButton.addEventListener('click',(chooseRock)) 
@@ -164,6 +185,8 @@ scissorsButton.addEventListener('click',(chooseScissors))
 
 
 
+//playGame function ends up being a group of conditionals that tells when we won, lose or draw.
+
 let userScore = 0;
 let computerScore = 0;
 
@@ -172,18 +195,14 @@ function playGame() {
     
     for (let i = 0; i < 5; i++) {
 
-
          if ((i == 4 && (userScore > computerScore) )){
-            console.log(userScore);
-            console.log(computerScore);
+            
     finalResult.textContent = "You won the game!";
           console.log("You won the game!")
           break
 
         }
         else if ((i == 4 && (computerScore > userScore) )){
-            console.log(userScore);
-            console.log(computerScore);
             finalResult.textContent = "You lost the game!";
             console.log("You lost the game!")
             break
@@ -191,8 +210,6 @@ function playGame() {
         }
 
         else if ((i == 4 && (userScore == computerScore))){
-            console.log(userScore);
-            console.log(computerScore);
             finalResult.textContent = "The game ends up tied!";
         console.log("The game ends up tied!");
         break
@@ -202,19 +219,8 @@ function playGame() {
 
       }
       
-      return "Game over"
       
          
         }
+  
 
-    
-
-<<<<<<< HEAD
-    
-=======
-        
-
-        console.log(playGame(playRound))
-
-        */
->>>>>>> refs/remotes/origin/rps-ui
